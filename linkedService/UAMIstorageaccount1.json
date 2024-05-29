@@ -1,0 +1,17 @@
+{
+	"name": "UAMIstorageaccount1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://storageaccount1.blob.core.chinacloudapi.cn/",
+			"accountKind": "StorageV2",
+			"credential": {
+				"referenceName": "uamgmtid1",
+				"type": "CredentialReference"
+			}
+		},
+		"description": "d"
+	}
+}

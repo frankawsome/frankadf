@@ -1,0 +1,38 @@
+{
+	"name": "TransformMovies",
+	"properties": {
+		"description": "MappingDataflowTutorial:\n\nhttps://learn.microsoft.com/en-us/azure/data-factory/tutorial-data-flow",
+		"activities": [
+			{
+				"name": "dataflow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "LABMay"
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-05-20T10:54:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

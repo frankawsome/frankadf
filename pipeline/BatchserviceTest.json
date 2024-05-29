@@ -1,0 +1,45 @@
+{
+	"name": "BatchserviceTest",
+	"properties": {
+		"activities": [
+			{
+				"name": "activities_batchservice1",
+				"type": "Custom",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:10:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"command": {
+						"value": "cmd /C echo helloWorld",
+						"type": "Expression"
+					},
+					"resourceLinkedService": {
+						"referenceName": "UAMIstorageaccount1",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "input",
+					"referenceObjects": {
+						"linkedServices": [],
+						"datasets": []
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "adf_AzureBatch1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "LABMay"
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-05-21T05:07:42Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

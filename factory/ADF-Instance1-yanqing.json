@@ -1,0 +1,27 @@
+{
+	"name": "ADF-Instance1-yanqing",
+	"properties": {
+		"globalParameters": {
+			"KeyVaultURL": {
+				"type": "string",
+				"value": "https://akv1cn2.vault.azure.cn/"
+			}
+		}
+	},
+	"location": "chinaeast2",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "1fb16e47-f6ac-4926-8e4b-13b86ca4424c",
+		"tenantId": "954ddad8-66d7-47a8-8f9f-1316152d9587",
+		"userAssignedIdentities": {
+			"/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourcegroups/RG-yanqing-ADF/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mgmtid1": {
+				"clientId": "7183df05-48b2-4f62-a2ae-a41e546fac2c",
+				"principalId": "97cf1004-d112-4309-951c-873facc959b3"
+			},
+			"/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourcegroups/RG-yanqing-ADF/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAmgmtid1": {
+				"clientId": "e3f5d4a7-a3bd-4260-ae5c-44cdbd11df0e",
+				"principalId": "c220bfdb-446e-4d8b-ad5f-03c5f8880d98"
+			}
+		}
+	}
+}

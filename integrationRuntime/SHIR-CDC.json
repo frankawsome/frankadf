@@ -1,0 +1,6 @@
+{
+	"name": "SHIR-CDC",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

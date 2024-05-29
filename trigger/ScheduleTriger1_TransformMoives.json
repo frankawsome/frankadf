@@ -1,0 +1,26 @@
+{
+	"name": "ScheduleTriger1_TransformMoives",
+	"properties": {
+		"description": "ScheduleTriger1_TransformMoives ",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TransformMovies",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2024-05-12T13:15:00",
+				"endTime": "2024-05-13T17:15:00",
+				"timeZone": "China Standard Time"
+			}
+		}
+	}
+}

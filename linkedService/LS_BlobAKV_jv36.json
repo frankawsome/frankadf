@@ -1,0 +1,19 @@
+{
+	"name": "LS_BlobAKV_jv36",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=storage2shx23oqojv36;EndpointSuffix=core.chinacloudapi.cn;",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_akv1cn2",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "storageaccountaccesskey-jv36"
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"name": "DestinationDataset_1hx",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Conn_AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "datafactory"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

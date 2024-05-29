@@ -1,0 +1,16 @@
+{
+	"name": "LS_SHIR_Source_blobtxt_jv36",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=storage2shx23oqojv36;EndpointSuffix=core.chinacloudapi.cn;",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyY2FhZDIzYy03MTllLTRiNmEtOTQyOS02OWIyYjQyYzM5ZmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

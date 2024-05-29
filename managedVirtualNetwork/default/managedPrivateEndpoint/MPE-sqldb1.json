@@ -1,0 +1,10 @@
+{
+	"name": "MPE-sqldb1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.Sql/servers/franksqldbsvr1",
+		"groupId": "sqlServer",
+		"fqdns": [
+			"franksqldbsvr1.database.chinacloudapi.cn"
+		]
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "LS_SHIR_Target_SqlDB_franksqldb1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=franksqldbsvr1.database.chinacloudapi.cn;initial catalog=franksqldb1;user id=sqluser1",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NmJhNzNhYy01OGJmLTQ1NDQtYjU0MC00N2ZkNzhjYWRhMTIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

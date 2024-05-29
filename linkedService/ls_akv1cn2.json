@@ -1,0 +1,15 @@
+{
+	"name": "ls_akv1cn2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://akv1cn2.vault.azure.cn/",
+			"credential": {
+				"referenceName": "uamgmtid1",
+				"type": "CredentialReference"
+			}
+		}
+	}
+}

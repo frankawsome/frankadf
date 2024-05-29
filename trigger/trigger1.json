@@ -1,0 +1,25 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "IncrementalCopyPipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 50,
+				"startTime": "2024-04-22T19:53:00",
+				"endTime": "2024-04-23T00:00:00",
+				"timeZone": "China Standard Time"
+			}
+		}
+	}
+}
