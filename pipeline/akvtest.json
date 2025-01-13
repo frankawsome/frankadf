@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": "https://akv1cn2.vault.azure.cn/secrets/storageaccountaccesskey-jv36/5c7e0aa9f47b48e1865b62ab3be84c06/?api-version=7.0",
+					"url": "https://akv1cn2.vault.azure.cn/secrets/storageaccountaccesskey-jv361/5c7e0aa9f47b48e1865b62ab3be84c06/?api-version=7.0",
 					"connectVia": {
 						"referenceName": "AIR-MgmtVnet",
 						"type": "IntegrationRuntimeReference"
@@ -33,7 +33,7 @@
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2024-05-24T10:17:52Z"
+		"lastPublishTime": "2024-06-04T03:28:48Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

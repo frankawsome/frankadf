@@ -1,20 +1,19 @@
 {
-	"name": "SourceDataset_1hx",
+	"name": "DS_blob_Json1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Conn_AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Binary",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "100mb.csv",
-				"folderPath": "ADF1",
-				"container": "adfdatasource"
+				"container": "output"
 			}
-		}
+		},
+		"schema": {}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,0 +1,10 @@
+{
+	"name": "PrivateLinkService44",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/AzureStorageTest/providers/Microsoft.Network/privateLinkServices/frankpls1",
+		"groupId": "",
+		"fqdns": [
+			"frankpls1.53b3f1ca-acee-4aa0-973c-a6d57fb4b1c2.chinanorth3.azure.privatelinkservice"
+		]
+	}
+}

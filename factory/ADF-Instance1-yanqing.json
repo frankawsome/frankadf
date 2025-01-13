@@ -5,6 +5,10 @@
 			"KeyVaultURL": {
 				"type": "string",
 				"value": "https://akv1cn2.vault.azure.cn/"
+			},
+			"num": {
+				"type": "int",
+				"value": 2
 			}
 		}
 	},

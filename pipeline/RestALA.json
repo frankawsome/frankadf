@@ -1,0 +1,92 @@
+{
+	"name": "RestALA",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "getSPbearerToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": "{\n\"query\": \"AzureActivity | summarize count() by Category\" \n}",
+						"additionalHeaders": {
+							"content-type": "application/json; chartset=utf-8",
+							"Authorization": {
+								"value": "@concat('Bearer ', activity('getSPbearerToken').output.access_token)\n",
+								"type": "Expression"
+							}
+						},
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "RestResource1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_blob_Json1",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "getSPbearerToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"headers": {
+						"Content-type": "application/x-www-form-urlencoded"
+					},
+					"url": "https://login.chinacloudapi.cn/mcpod.partner.onmschina.cn/oauth2/v2.0/token",
+					"body": "client_id=7795fc75-3757-45aa-8581-5af29a47d80f&scope=https%3A%2F%2Fapi.loganalytics.azure.cn%2F.default&client_secret=_3Dlfn97-9JF20-b_3hkDGCfU73E3jm_Nt&grant_type=client_credentials"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-08-09T08:02:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

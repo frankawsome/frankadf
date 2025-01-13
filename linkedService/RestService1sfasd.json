@@ -1,0 +1,13 @@
+{
+	"name": "RestService1sfasd",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.loganalytics.azure.cn/v1/workspaces/27e73cd8-e100-4a45-b60f-aa1a0d74c33f",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "AzurePostgreSql494",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RGfrankpgsql/providers/Microsoft.DBforPostgreSQL/flexibleServers/pgsqlflex1",
+		"groupId": "postgresqlServer",
+		"fqdns": [
+			"pgsqlflex1.postgres.database.chinacloudapi.cn"
+		]
+	}
+}

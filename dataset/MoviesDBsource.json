@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "moviesDB.csv",
+				"fileName": "100mb.csv",
 				"folderPath": "ADF1",
 				"fileSystem": "adfdatasource"
 			},
