@@ -2,15 +2,15 @@
 	"name": "DS_blob_Json1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Conn_AzureBlobStorage1",
+			"referenceName": "ADLSstorageaccount1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "output"
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "output"
 			}
 		},
 		"schema": {}
