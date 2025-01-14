@@ -2,17 +2,17 @@
 	"name": "SourceDataset_1hx",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Conn_AzureBlobStorage1",
+			"referenceName": "ADLSstorageaccount1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": "100mb.csv",
 				"folderPath": "ADF1",
-				"container": "adfdatasource"
+				"fileSystem": "adfdatasource"
 			}
 		}
 	},
