@@ -2,7 +2,7 @@
 	"name": "TargetSQLDBDatasetMgmtVnet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabaseLinkedService",
+			"referenceName": "franksqldb1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -21,7 +21,11 @@
 				"name": "LastName",
 				"type": "varchar"
 			}
-		]
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "table1"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
