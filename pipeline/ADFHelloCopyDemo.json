@@ -3,7 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_1hx",
+				"name": "Copy_1hxdsfa",
+				"description": "stsetteatefgsfadsf",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -40,8 +41,7 @@
 							"type": "AzureBlobStorageWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"validateDataConsistency": false
+					"enableStaging": false
 				},
 				"inputs": [
 					{
