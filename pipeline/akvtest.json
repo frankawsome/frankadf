@@ -23,10 +23,6 @@
 					},
 					"authentication": {
 						"resource": "https://vault.azure.cn",
-						"credential": {
-							"referenceName": "uamgmtid1",
-							"type": "CredentialReference"
-						},
 						"type": "UserAssignedManagedIdentity"
 					}
 				}
