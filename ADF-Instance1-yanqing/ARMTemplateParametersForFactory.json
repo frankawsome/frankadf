@@ -1,0 +1,148 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-Instance1-yanqing"
+		},
+		"ADLSstorageaccount1_accountKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzurePostgreSql1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"value": ""
+		},
+		"Conn_AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"LS_BlobAKV_jv36_connectionString": {
+			"value": "DefaultEndpointsProtocol=https;AccountName=storage2shx23oqojv36;EndpointSuffix=core.chinacloudapi.cn;"
+		},
+		"LS_SHIR_Source_blobtxt_jv36_connectionString": {
+			"value": ""
+		},
+		"LS_SHIR_Target_SqlDB_franksqldb1_connectionString": {
+			"value": ""
+		},
+		"Sftp1_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"Wkspc_databrickstest1_accessToken": {
+			"value": ""
+		},
+		"adf_AzureBatch1_accessKey": {
+			"value": ""
+		},
+		"blobjv36_connectionString": {
+			"value": ""
+		},
+		"franksqldb1_connectionString": {
+			"value": ""
+		},
+		"ADLSstorageaccount1_properties_typeProperties_url": {
+			"value": "https://storageaccount1.dfs.core.chinacloudapi.cn/"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+			"value": "https://storage2shx23oqojv36.blob.core.chinacloudapi.cn/"
+		},
+		"RestService1sfasd_properties_typeProperties_url": {
+			"value": "https://api.loganalytics.azure.cn/v1/workspaces/27e73cd8-e100-4a45-b60f-aa1a0d74c33f"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "storageaccount2.blob.core.chinacloudapi.cn"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "storageaccount2.container1.sftpuser1"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "frankpls1.53b3f1ca-acee-4aa0-973c-a6d57fb4b1c2.chinanorth3.azure.privatelinkservice"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "db1"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "sqlvmuser1"
+		},
+		"UAMIstorageaccount1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://storageaccount1.blob.core.chinacloudapi.cn/"
+		},
+		"adf_AzureBatch1_properties_typeProperties_batchUri": {
+			"value": "https://batchservice1.chinanorth3.batch.chinacloudapi.cn"
+		},
+		"adf_AzureBatch1_properties_typeProperties_poolName": {
+			"value": "testpool1"
+		},
+		"adf_AzureBatch1_properties_typeProperties_accountName": {
+			"value": "batchservice1"
+		},
+		"ls_akv1cn2_properties_typeProperties_baseUrl": {
+			"value": "https://akv1cn2.vault.azure.cn/"
+		},
+		"AzureKeyVault20_properties_privateLinkResourceId": {
+			"value": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.KeyVault/vaults/akv1cn2"
+		},
+		"AzureKeyVault20_properties_groupId": {
+			"value": "vault"
+		},
+		"AzureKeyVault20_properties_fqdns": {
+			"value": [
+				"akv1cn2.vault.azure.cn"
+			]
+		},
+		"AzurePostgreSql494_properties_privateLinkResourceId": {
+			"value": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RGfrankpgsql/providers/Microsoft.DBforPostgreSQL/flexibleServers/pgsqlflex1"
+		},
+		"AzurePostgreSql494_properties_groupId": {
+			"value": "postgresqlServer"
+		},
+		"AzurePostgreSql494_properties_fqdns": {
+			"value": [
+				"pgsqlflex1.postgres.database.chinacloudapi.cn"
+			]
+		},
+		"MPE-blob-jv36_properties_privateLinkResourceId": {
+			"value": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.Storage/storageAccounts/storage2shx23oqojv36"
+		},
+		"MPE-blob-jv36_properties_groupId": {
+			"value": "blob"
+		},
+		"MPE-blob-jv36_properties_fqdns": {
+			"value": [
+				"storage2shx23oqojv36.blob.core.chinacloudapi.cn"
+			]
+		},
+		"MPE-sqldb1_properties_privateLinkResourceId": {
+			"value": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.Sql/servers/franksqldbsvr1"
+		},
+		"MPE-sqldb1_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"MPE-sqldb1_properties_fqdns": {
+			"value": [
+				"franksqldbsvr1.database.chinacloudapi.cn"
+			]
+		},
+		"PrivateLinkService44_properties_privateLinkResourceId": {
+			"value": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/AzureStorageTest/providers/Microsoft.Network/privateLinkServices/frankpls1"
+		},
+		"PrivateLinkService44_properties_groupId": {
+			"value": ""
+		},
+		"PrivateLinkService44_properties_fqdns": {
+			"value": [
+				"frankpls1.53b3f1ca-acee-4aa0-973c-a6d57fb4b1c2.chinanorth3.azure.privatelinkservice"
+			]
+		}
+	}
+}

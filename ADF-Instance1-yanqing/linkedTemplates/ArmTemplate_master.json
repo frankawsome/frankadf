@@ -1,0 +1,414 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-Instance1-yanqing"
+		},
+		"ADLSstorageaccount1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSstorageaccount1'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzurePostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzurePostgreSql1'"
+		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
+		},
+		"Conn_AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Conn_AzureBlobStorage2'"
+		},
+		"LS_BlobAKV_jv36_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BlobAKV_jv36'",
+			"defaultValue": "DefaultEndpointsProtocol=https;AccountName=storage2shx23oqojv36;EndpointSuffix=core.chinacloudapi.cn;"
+		},
+		"LS_SHIR_Source_blobtxt_jv36_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SHIR_Source_blobtxt_jv36'"
+		},
+		"LS_SHIR_Target_SqlDB_franksqldb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SHIR_Target_SqlDB_franksqldb1'"
+		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp1'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"Wkspc_databrickstest1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'Wkspc_databrickstest1'"
+		},
+		"adf_AzureBatch1_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'adf_AzureBatch1'"
+		},
+		"blobjv36_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blobjv36'"
+		},
+		"franksqldb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'franksqldb1'"
+		},
+		"ADLSstorageaccount1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccount1.dfs.core.chinacloudapi.cn/"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://storage2shx23oqojv36.blob.core.chinacloudapi.cn/"
+		},
+		"RestService1sfasd_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.loganalytics.azure.cn/v1/workspaces/27e73cd8-e100-4a45-b60f-aa1a0d74c33f"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "storageaccount2.blob.core.chinacloudapi.cn"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "storageaccount2.container1.sftpuser1"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "frankpls1.53b3f1ca-acee-4aa0-973c-a6d57fb4b1c2.chinanorth3.azure.privatelinkservice"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db1"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqlvmuser1"
+		},
+		"UAMIstorageaccount1_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://storageaccount1.blob.core.chinacloudapi.cn/"
+		},
+		"adf_AzureBatch1_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://batchservice1.chinanorth3.batch.chinacloudapi.cn"
+		},
+		"adf_AzureBatch1_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "testpool1"
+		},
+		"adf_AzureBatch1_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "batchservice1"
+		},
+		"ls_akv1cn2_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://akv1cn2.vault.azure.cn/"
+		},
+		"AzureKeyVault20_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.KeyVault/vaults/akv1cn2"
+		},
+		"AzureKeyVault20_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
+		},
+		"AzureKeyVault20_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"akv1cn2.vault.azure.cn"
+			]
+		},
+		"AzurePostgreSql494_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RGfrankpgsql/providers/Microsoft.DBforPostgreSQL/flexibleServers/pgsqlflex1"
+		},
+		"AzurePostgreSql494_properties_groupId": {
+			"type": "string",
+			"defaultValue": "postgresqlServer"
+		},
+		"AzurePostgreSql494_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"pgsqlflex1.postgres.database.chinacloudapi.cn"
+			]
+		},
+		"MPE-blob-jv36_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.Storage/storageAccounts/storage2shx23oqojv36"
+		},
+		"MPE-blob-jv36_properties_groupId": {
+			"type": "string",
+			"defaultValue": "blob"
+		},
+		"MPE-blob-jv36_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"storage2shx23oqojv36.blob.core.chinacloudapi.cn"
+			]
+		},
+		"MPE-sqldb1_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.Sql/servers/franksqldbsvr1"
+		},
+		"MPE-sqldb1_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
+		"MPE-sqldb1_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"franksqldbsvr1.database.chinacloudapi.cn"
+			]
+		},
+		"PrivateLinkService44_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/AzureStorageTest/providers/Microsoft.Network/privateLinkServices/frankpls1"
+		},
+		"PrivateLinkService44_properties_groupId": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"PrivateLinkService44_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"frankpls1.53b3f1ca-acee-4aa0-973c-a6d57fb4b1c2.chinanorth3.azure.privatelinkservice"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-Instance1-yanqing_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLSstorageaccount1_accountKey": {
+						"value": "[parameters('ADLSstorageaccount1_accountKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureSqlDatabaseLinkedService_connectionString": {
+						"value": "[parameters('AzureSqlDatabaseLinkedService_connectionString')]"
+					},
+					"Conn_AzureBlobStorage2_connectionString": {
+						"value": "[parameters('Conn_AzureBlobStorage2_connectionString')]"
+					},
+					"Sftp1_password": {
+						"value": "[parameters('Sftp1_password')]"
+					},
+					"Wkspc_databrickstest1_accessToken": {
+						"value": "[parameters('Wkspc_databrickstest1_accessToken')]"
+					},
+					"franksqldb1_connectionString": {
+						"value": "[parameters('franksqldb1_connectionString')]"
+					},
+					"ADLSstorageaccount1_properties_typeProperties_url": {
+						"value": "[parameters('ADLSstorageaccount1_properties_typeProperties_url')]"
+					},
+					"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureStorageLinkedService_properties_typeProperties_serviceEndpoint')]"
+					},
+					"RestService1sfasd_properties_typeProperties_url": {
+						"value": "[parameters('RestService1sfasd_properties_typeProperties_url')]"
+					},
+					"Sftp1_properties_typeProperties_host": {
+						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
+					},
+					"Sftp1_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADF-Instance1-yanqing_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_SHIR_Source_blobtxt_jv36_connectionString": {
+						"value": "[parameters('LS_SHIR_Source_blobtxt_jv36_connectionString')]"
+					},
+					"LS_SHIR_Target_SqlDB_franksqldb1_connectionString": {
+						"value": "[parameters('LS_SHIR_Target_SqlDB_franksqldb1_connectionString')]"
+					},
+					"adf_AzureBatch1_accessKey": {
+						"value": "[parameters('adf_AzureBatch1_accessKey')]"
+					},
+					"UAMIstorageaccount1_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('UAMIstorageaccount1_properties_typeProperties_serviceEndpoint')]"
+					},
+					"adf_AzureBatch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('adf_AzureBatch1_properties_typeProperties_batchUri')]"
+					},
+					"adf_AzureBatch1_properties_typeProperties_poolName": {
+						"value": "[parameters('adf_AzureBatch1_properties_typeProperties_poolName')]"
+					},
+					"adf_AzureBatch1_properties_typeProperties_accountName": {
+						"value": "[parameters('adf_AzureBatch1_properties_typeProperties_accountName')]"
+					},
+					"ls_akv1cn2_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_akv1cn2_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault20_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureKeyVault20_properties_privateLinkResourceId')]"
+					},
+					"AzureKeyVault20_properties_groupId": {
+						"value": "[parameters('AzureKeyVault20_properties_groupId')]"
+					},
+					"AzureKeyVault20_properties_fqdns": {
+						"value": "[parameters('AzureKeyVault20_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-Instance1-yanqing_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADF-Instance1-yanqing_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzurePostgreSql1_connectionString": {
+						"value": "[parameters('AzurePostgreSql1_connectionString')]"
+					},
+					"LS_BlobAKV_jv36_connectionString": {
+						"value": "[parameters('LS_BlobAKV_jv36_connectionString')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"blobjv36_connectionString": {
+						"value": "[parameters('blobjv36_connectionString')]"
+					},
+					"AzurePostgreSql494_properties_privateLinkResourceId": {
+						"value": "[parameters('AzurePostgreSql494_properties_privateLinkResourceId')]"
+					},
+					"AzurePostgreSql494_properties_groupId": {
+						"value": "[parameters('AzurePostgreSql494_properties_groupId')]"
+					},
+					"AzurePostgreSql494_properties_fqdns": {
+						"value": "[parameters('AzurePostgreSql494_properties_fqdns')]"
+					},
+					"MPE-blob-jv36_properties_privateLinkResourceId": {
+						"value": "[parameters('MPE-blob-jv36_properties_privateLinkResourceId')]"
+					},
+					"MPE-blob-jv36_properties_groupId": {
+						"value": "[parameters('MPE-blob-jv36_properties_groupId')]"
+					},
+					"MPE-blob-jv36_properties_fqdns": {
+						"value": "[parameters('MPE-blob-jv36_properties_fqdns')]"
+					},
+					"MPE-sqldb1_properties_privateLinkResourceId": {
+						"value": "[parameters('MPE-sqldb1_properties_privateLinkResourceId')]"
+					},
+					"MPE-sqldb1_properties_groupId": {
+						"value": "[parameters('MPE-sqldb1_properties_groupId')]"
+					},
+					"MPE-sqldb1_properties_fqdns": {
+						"value": "[parameters('MPE-sqldb1_properties_fqdns')]"
+					},
+					"PrivateLinkService44_properties_privateLinkResourceId": {
+						"value": "[parameters('PrivateLinkService44_properties_privateLinkResourceId')]"
+					},
+					"PrivateLinkService44_properties_groupId": {
+						"value": "[parameters('PrivateLinkService44_properties_groupId')]"
+					},
+					"PrivateLinkService44_properties_fqdns": {
+						"value": "[parameters('PrivateLinkService44_properties_fqdns')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-Instance1-yanqing_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ADF-Instance1-yanqing_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-Instance1-yanqing_ArmTemplate_2')]"
+			]
+		}
+	]
+}
