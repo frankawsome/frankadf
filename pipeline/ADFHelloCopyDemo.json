@@ -4,7 +4,7 @@
 		"activities": [
 			{
 				"name": "Copy_1hxdsfa",
-				"description": "stsetteatefgsfadsf",
+				"description": "stsetteatefgsfadsfasdfsfasfsdfasdfsdfds",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -28,7 +28,7 @@
 					"source": {
 						"type": "BinarySource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true
 						},
 						"formatSettings": {
