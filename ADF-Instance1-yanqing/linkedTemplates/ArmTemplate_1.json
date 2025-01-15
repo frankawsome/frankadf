@@ -38,26 +38,38 @@
 		"ls_akv1cn2_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://akv1cn2.vault.azure.cn/"
-		},
-		"AzureKeyVault20_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/90b7dc34-f287-4964-8119-cca776f1e476/resourceGroups/RG-yanqing-ADF/providers/Microsoft.KeyVault/vaults/akv1cn2"
-		},
-		"AzureKeyVault20_properties_groupId": {
-			"type": "string",
-			"defaultValue": "vault"
-		},
-		"AzureKeyVault20_properties_fqdns": {
-			"type": "array",
-			"defaultValue": [
-				"akv1cn2.vault.azure.cn"
-			]
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/MovieSink')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSstorageaccount1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "ADF1",
+						"fileSystem": "adfdatatarget"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/MoviesDBsource')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
@@ -601,17 +613,6 @@
 					"type": "ManagedVirtualNetworkReference",
 					"referenceName": "default"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/AzureKeyVault20')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('AzureKeyVault20_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('AzureKeyVault20_properties_groupId')]",
-				"fqdns": "[parameters('AzureKeyVault20_properties_fqdns')]"
 			},
 			"dependsOn": []
 		}

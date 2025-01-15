@@ -297,15 +297,6 @@
 					},
 					"ls_akv1cn2_properties_typeProperties_baseUrl": {
 						"value": "[parameters('ls_akv1cn2_properties_typeProperties_baseUrl')]"
-					},
-					"AzureKeyVault20_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureKeyVault20_properties_privateLinkResourceId')]"
-					},
-					"AzureKeyVault20_properties_groupId": {
-						"value": "[parameters('AzureKeyVault20_properties_groupId')]"
-					},
-					"AzureKeyVault20_properties_fqdns": {
-						"value": "[parameters('AzureKeyVault20_properties_fqdns')]"
 					}
 				}
 			},
@@ -338,6 +329,15 @@
 					},
 					"blobjv36_connectionString": {
 						"value": "[parameters('blobjv36_connectionString')]"
+					},
+					"AzureKeyVault20_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureKeyVault20_properties_privateLinkResourceId')]"
+					},
+					"AzureKeyVault20_properties_groupId": {
+						"value": "[parameters('AzureKeyVault20_properties_groupId')]"
+					},
+					"AzureKeyVault20_properties_fqdns": {
+						"value": "[parameters('AzureKeyVault20_properties_fqdns')]"
 					},
 					"AzurePostgreSql494_properties_privateLinkResourceId": {
 						"value": "[parameters('AzurePostgreSql494_properties_privateLinkResourceId')]"
